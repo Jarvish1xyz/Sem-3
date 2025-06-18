@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        let faculties = [
+            facultie1 = {
+                "name":"abc",
+                "department":"cse",
+                "shift":1,
+                "address":4932
+            },
+            facultie2 = {
+                "name":"pqr",
+                "department":"msc",
+                "shift":2,
+                "address":9532
+            },
+            facultie3 = {
+                "name":"xyz",
+                "department":"bsc",
+                "shift":1,
+                "address":7832
+            },
+            facultie4 = {
+                "name":"lmn",
+                "department":"bba",
+                "shift":2,
+                "address":4102
+            }
+        ];
+
+        // let n = parseInt(prompt("Enter number of array element"));
+        
+        for(let k of faculties) {
+            let keys = Object.keys(k);
+            let values = Object.values(k);
+            for(let i=0; i<keys.length; i++) {
+                document.body.innerHTML+=keys[i]+" : " + values[i] + "<br>";
+            }
+            document.body.innerHTML+="<br><br>";
+        }
+    </script>
+</body>
+</html>

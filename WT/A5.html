@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let text = prompt("Enter the sentence : ");
+        let word=prompt("Enter the word you want to serch");
+        // alert(text.indexOf(word));
+        let ans;
+        let a = text.split(" ");
+        for(let i=0; i<a.length; i++) {
+            if(a[i]==word) {
+                ans=i;
+                break;
+            }
+        }
+        alert(ans);
+    </script>
+</body>
+</html>

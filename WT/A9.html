@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        let products = [
+            product1 = {
+                "name":"abc",
+                "quantity":30,
+                "id":45687913,
+                "section":"qwerty"
+            },
+            product2 = {
+                "name":"abc",
+                "quantity":30,
+                "id":45687913,
+                "section":"qwerty"
+            },
+            product3 = {
+                "name":"abc",
+                "quantity":30,
+                "id":45687913,
+                "section":"qwerty"
+            },
+            product4 = {
+                "name":"abc",
+                "quantity":30,
+                "id":45687913,
+                "section":"qwerty"
+            }
+        ];
+
+        // let n = parseInt(prompt("Enter number of array element"));
+        
+        for(let k of products) {
+            let keys = Object.keys(k);
+            let values = Object.values(k);
+            for(let i=0; i<keys.length; i++) {
+                document.body.innerHTML+=keys[i]+" : " + values[i] + "<br>";
+            }
+            document.body.innerHTML+="<br><br>";
+        }
+    </script>
+</body>
+</html>
