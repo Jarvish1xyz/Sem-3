@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./A11.css">
+</head>
+<body>
+    <div class="container">
+        <form id="myform" action="" >
+            <table>
+                <tr>
+                    <td>User_Name : </td>
+                    <td>
+                        <input type="text" name="uname" id="uname"> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password : </td>
+                    <td>
+                        <input type="password" name="paswd" id="paswd">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Confirm_Password : </td>
+                    <td>
+                        <input type="password" name="repaswd" id="repaswd">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Date of Birth : </td>
+                    <td>
+                        <input type="date" name="dob" id="dob">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Enrollment NO : </td>
+                    <td>
+                        <input type="tel" name="enroll" id="enroll">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email : </td>
+                    <td>
+                        <input type="email" name="mail" id="mail">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button onclick="dataCheck()" id="submit">Submit</button>
+                        <button onclick="resetData()" id="reset">Reset</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <script src="./A11.js"></script>
+</body>
+</html>

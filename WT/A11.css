@@ -1,0 +1,51 @@
+body{
+    margin: 0vh;
+    padding: 20vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 50vh;
+    background-image: linear-gradient(to top right,rgb(215, 214, 214), rgba(112, 108, 108, 0.388), gray);
+    border: 1px solid rgba(164, 163, 163, 0.655);
+    border-radius: 1.7rem;
+    box-shadow: 2px 2px 12px 0.1px gray;
+}
+
+#myform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* width: 100%; */
+    font-family:cursive;
+    font-size: larger;
+}
+
+#dob{
+    width: 80%;
+}
+
+input {
+    margin: 2vh;
+}
+
+button {
+    margin: 2vh;
+    width: 8vh;
+    padding: 0.6vh 1vh;
+    font-family: cursive;
+    background-color: aliceblue;
+    border: 1px solid rgba(97, 96, 96, 0.527);
+    border-radius: 2rem;
+    transition: all 0.5s;
+}
+
+button:hover {
+    transform: scale(1.15);
+}
