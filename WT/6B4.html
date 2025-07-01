@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <table>
+            <tr>
+                <td>OnFocus : </td>
+                <td><input onfocus="focusf(event)" type="text" name="" id=""></td>
+            </tr>
+            <tr>
+                <td>OnBlur : </td>
+                <td><input onblur="blurf(event)" type="text" name="" id=""></td>
+            </tr>
+            <tr>
+                <td>OnSelect : </td>
+                <td><input onselect="selectf(event)" type="text" name="" id=""></td>
+            </tr>
+            <tr>
+                <td>OnChange : </td>
+                <td><select onchange="changef(event)" name="" id="" style="width: 100px;">
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td><input onsubmit="submitf(event)" type="submit" value="Submit"></td>
+                <td><input onreset="resetf(event)" type="reset" value="Reset"></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function focusf(e) {
+            console.log(e.type);
+        }
+        function blurf(e) {
+            console.log(e.type);
+        }
+        function selectf(e) {
+            console.log(e.type);
+        }
+        function changef(e) {
+            console.log(e.type);
+        }
+        function submitf(e) {
+            // e.preventDefault();
+            console.log(e);
+        }
+        function resetf(e) {
+            e.preventDefault();
+            console.log(e.type);
+        }
+    </script>
+</body>
+</html>

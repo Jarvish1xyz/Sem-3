@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin: 5vh;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label for="keyevnt1">KeyPress Event : </label>
+        <input onkeypress="keyprss(event)" type="text" name="keybord1" id="keyevnt1">
+    </div>
+    <div>
+        <label for="keyevnt2">KeyDown Event : </label>
+        <input onkeydown="keydwn(event)" type="text" name="keybord2" id="keyevnt2">
+    </div>
+    <div>
+        <label for="keyevnt3">KeyUp Event : </label>
+        <input onkeyup="keyup(event)" type="text" name="keybord3" id="keyevnt3">
+    </div>
+
+    <script>
+        function keyprss(e) {
+            console.log(e.type);
+        }
+        function keydwn(e) {
+            console.log(e.type);
+        }
+        function keyup(e) {
+            console.log(e.type);
+        }
+    </script>
+</body>
+</html>

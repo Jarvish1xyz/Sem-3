@@ -6,6 +6,27 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <button onclick="changeStart()">Sart</button>
+    <button onclick="changeEnd()">End</button>
+
+    <script>
+
+        let id;
+        function changeStart() {
+            id=setInterval(changeColor, 100);
+        }
+
+        function changeEnd() {
+            clearInterval(id);
+        }
+
+        function changeColor() {
+            let r=Math.random()*256;
+            let g=Math.random()*256;
+            let b=Math.random()*256;
+
+            document.body.style.backgroundColor = "rgb("+r+","+g+","+b+")";
+        }
+    </script>
 </body>
 </html>

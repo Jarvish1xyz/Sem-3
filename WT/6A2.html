@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin: 5vh;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button onmousedown="mousedown(event)">Click!</button>
+        <button onmouseup="mouseup()">Click!</button>
+        <button onmouseenter="mouseenter()">Click!</button>
+        <button onmouseleave="mouseleave()">Click!</button>
+    </div>
+    <div>
+        <input type="text" name="event1" id="evnt1">
+        <input type="text" name="event2" id="evnt2">
+        <input type="text" name="event3" id="evnt3">
+        <input type="text" name="event4" id="evnt4">
+    </div>
+
+
+    <script>
+        function mousedown(e) {
+            console.log(e);
+            document.getElementById("evnt1").value = "mousedown event fired";
+        }
+        function mouseup() {
+            document.getElementById("evnt2").value = "mouseup event fired";
+        }
+        function mouseenter() {
+            document.getElementById("evnt3").value = "mouseenter event fired";
+        }
+        function mouseleave() {
+            document.getElementById("evnt4").value = "mouseleave event fired";
+        }
+    </script>
+</body>
+</html>
