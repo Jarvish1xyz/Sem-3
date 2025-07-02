@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="abc()">myInfo</button>
+
+    <script>
+
+        class demo {
+            constructor(name, age) {
+                this.name=name;
+                this.age=age;
+            }
+
+            printInfo() {
+                console.log(`Your name : ${this.name}, and your age : ${this.age}`);
+                
+            }
+        }
+
+        function abc() {
+            const myInfo = new demo("Milan", 17);
+            myInfo.printInfo();
+        }
+
+    </script>
+</body>
+</html>
