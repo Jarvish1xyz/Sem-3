@@ -1,0 +1,26 @@
+,main {
+    margin: 0px;
+    padding: 0px;
+}
+
+#moon {
+    border: 0px;
+    border-radius: 50px;
+    background-color: aliceblue;
+    float: right;
+    width: 7vh;
+    margin-right: 5vh;
+}
+
+#title {
+    background-color: azure;
+    height: 7vh;
+}
+
+.navbar {
+    background-color: aqua;
+    height: 7vh;
+    /* padding-top: 1vh; */
+    /* width: 100%; */
+    margin: 0vh;
+}

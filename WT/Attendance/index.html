@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Attendance Tracker</title>
+  <style>
+    :root {
+      --bg: #fff;
+      --fg: #000;
+      --card: #f9f9f9;
+    }
+    [data-theme="dark"] {
+      --bg: #222;
+      --fg: #eee;
+      --card: #333;
+    }
+    body {
+      margin: 0; padding: 20px;
+      font-family: sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      transition: background .3s, color .3s;
+    }
+    h1 {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    #themeToggle {
+      cursor: pointer;
+      padding: 5px 10px;
+      border: 1px solid var(--fg);
+      background: transparent;
+      color: var(--fg);
+      transition: background .3s, color .3s;
+    }
+    #themeToggle:hover {
+      background: var(--fg);
+      color: var(--bg);
+    }
+    .student {
+      background: var(--card);
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      transition: background .3s;
+    }
+    .name { flex:1; }
+    .radios { display: flex; gap: 10px; }
+    input[type="radio"] {
+      appearance: none;
+      width: 20px; height: 20px;
+      border: 2px solid #aaa;
+      border-radius: 50%;
+      position: relative;
+      cursor: pointer;
+      transition: border-color .2s, transform .2s;
+    }
+    input[type="radio"]::after {
+      content: '';
+      position: absolute;
+      top:50%; left:50%;
+      width: 10px; height:10px;
+      background: transparent;
+      border-radius: 50%;
+      transform: translate(-50%,-50%) scale(0);
+      transition: background .2s, transform .2s;
+    }
+    input.present + label::before {
+      border-color: green;
+    }
+    input.absent + label::before {
+      border-color: red;
+    }
+    input.present:checked + label::before {
+      border-color: green;
+    }
+    input.present:checked + label::after {
+      transform: translate(-50%,-50%) scale(1);
+      background: green;
+    }
+    input.absent:checked + label::after {
+      transform: translate(-50%,-50%) scale(1);
+      background: red;
+    }
+    label {
+      position: relative;
+      display: inline-block;
+      width: 20px; height:20px;
+    }
+    .status {
+      margin-left: 15px;
+      font-weight: bold;
+      width: 70px;
+      text-align: center;
+      transition: color .3s;
+    }
+    .present-status { color: green; }
+    .absent-status { color: red; }
+    .summary {
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+    #resetBtn {
+      margin-top: 20px;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body data-theme="light">
+
+  <h1>Student Attendance Tracker</h1>
+  <button id="themeToggle">Toggle Dark/Light</button>
+
+  <div id="studentList"></div>
+
+  <div class="summary">
+    Present: <span id="presentCount">0</span><br>
+    Absent: <span id="absentCount">0</span>
+  </div>
+
+  <button id="resetBtn">Reset Attendance</button>
+
+  <script>
+    const students = ["Alice","Bob","Cathy","David","Elena","Frank","Grace","Henry","Ivy","Jack"];
+    const attendance = {};
+    const elList = document.getElementById("studentList");
+    const presentCt = document.getElementById("presentCount");
+    const absentCt = document.getElementById("absentCount");
+    const resetBtn = document.getElementById("resetBtn");
+    const themeToggle = document.getElementById("themeToggle");
+    const body = document.body;
+
+    function build() {
+      elList.innerHTML = "";
+      students.forEach(name => {
+        attendance[name] = attendance[name] || "Absent";
+        const div = document.createElement("div");
+        div.className = "student";
+
+        const span = document.createElement("span");
+        span.className = "name";
+        span.textContent = name;
+
+        const radios = document.createElement("div");
+        radios.className = "radios";
+
+        ["Present","Absent"].forEach(stat => {
+          const input = document.createElement("input");
+          input.type = "radio";
+          input.name = name;
+          input.id = name + "-" + stat;
+          input.value = stat;
+          input.className = stat.toLowerCase();
+          if(attendance[name] === stat) input.checked = true;
+          input.addEventListener("change", () => {
+            attendance[name] = stat;
+            updateSummary();
+            statusSpan.textContent = stat;
+            statusSpan.className = "status " + stat.toLowerCase() + "-status";
+          });
+          const label = document.createElement("label");
+          label.htmlFor = input.id;
+
+          radios.append(input, label);
+        });
+
+        const statusSpan = document.createElement("span");
+        statusSpan.className = "status " + attendance[name].toLowerCase() + "-status";
+        statusSpan.textContent = attendance[name];
+
+        div.append(span, radios, statusSpan);
+        elList.append(div);
+      });
+      updateSummary();
+    }
+
+    function updateSummary() {
+      const pres = Object.values(attendance).filter(v=>v==="Present").length;
+      presentCt.textContent = pres;
+      absentCt.textContent = students.length - pres;
+    }
+
+    resetBtn.onclick = () => {
+      students.forEach(name => attendance[name]="Absent");
+      build();
+    };
+
+    themeToggle.onclick = () => {
+      body.dataset.theme = body.dataset.theme==="light"? "dark" : "light";
+    };
+
+    build();
+  </script>
+
+</body>
+</html>
+
