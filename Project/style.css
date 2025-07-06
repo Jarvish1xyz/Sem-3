@@ -1,36 +1,150 @@
 body {
-    margin: 0vh;
-    padding: 0vh;
-    height: 100vh   ;
+    transition: background-color 0.4s, color 0.4s;
 }
 
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body {
+    width: 100vw;
+    position: fixed;
+}
+
+
+.sidebar {
+    height: 91vh;
+    width: 300px;
+    overflow-y: auto;
+    border-right: 1px solid #ccc;
+    background: linear-gradient(195deg, #3388c5, #5ea0d6, #9ac8f5);
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
+    scroll-behavior: smooth;
+    transition: background 0.4s;
+}
+
+.roll-item {
+    cursor: pointer;
+    padding: 14px 24px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.4s, color 0.4s;
+    font-weight: 500;
+    color: #0d47a1;
+    border-radius: 20rem;
+    /* margin-right: 8px; */
+}
+
+.roll-item.active {
+    background-color: #1976d2;
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 2px 2px 8px rgba(25, 118, 210, 0.08);
+}
+
+.roll-item.present {
+    background-color: #388e3c !important;
+    color: white;
+}
+
+.roll-item.absent {
+    background-color: #d32f2f !important;
+    color: white;
+}
+
+.roll-item:hover {
+    background-color: #0d47a1;
+    color: #bbdefb;
+}
+
+.student-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 180px);
+    background-image: linear-gradient(125deg, #296691, #5994c4e1, #8ed0ffda, #5994c4e1, #296691);
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.12);
+    padding: 30px;
+    margin: 20px 0;
+    transition: background 0.4s;
+}
+
+.card-body {
+    font-family: cursive;
+    /* height: auto; */
+}
+
+i {
+    font-style: normal;
+    color: #0d47a1;
+}
 
 .student-card {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #f8f9fa;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: auto;
+    width: 500px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+    transition: all 0.5s cubic-bezier(.4, 2, .3, 1);
+    animation: fadeIn 0.5s;
+    padding: 24px;
 }
 
-#studentCard {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+.p-4 {
+    width: calc(100% - 300px);
+    background-image: linear-gradient(110deg, #409db9, #56a2b9e1, #679ba8da, #7b8c96c4);
 }
 
-.row {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.card-title {
+    color: #1565c0;
 }
 
-.stucard {
-    
+.card-text strong {
+    color: #0d47a1;
+}
+
+.model {
+    color: black;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.icon-toggle {
+    transition: transform 0.4s;
+}
+
+.icon-toggle.rotate {
+    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .student-card-container {
+        height: auto;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .p-4 {
+        height: 100vh;
+        width: 100%;
+    }
+
+    .student-card-container .student-card {
+        width: 100%;
+    }
 }
