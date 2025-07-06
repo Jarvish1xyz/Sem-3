@@ -1,0 +1,36 @@
+body {
+    margin: 0vh;
+    padding: 0vh;
+    height: 100vh   ;
+}
+
+
+.student-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#studentCard {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.row {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.stucard {
+    
+}
