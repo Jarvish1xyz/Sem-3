@@ -22,8 +22,8 @@ int main() {
     for(int i=0; i<p; i++) {
         ans[i]=a[i];
     }
-    for(int i=p; i<s; i++) {
-        ans[i]=b[i];
+    for(int i=p,j=0; i<s,j<q; i++,j++) {
+        ans[i]=b[j];
     }
 
     for(int i=0; i<s; i++) {
