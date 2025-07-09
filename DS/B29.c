@@ -22,7 +22,7 @@ int main() {
     for(int i=0; i<p; i++) {
         ans[i]=a[i];
     }
-    for(int i=p; i<q; i++) {
+    for(int i=p; i<s; i++) {
         ans[i]=b[i];
     }
 
