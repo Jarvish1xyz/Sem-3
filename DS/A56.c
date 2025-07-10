@@ -10,12 +10,12 @@ struct node* first = NULL;
 
 void insertAtLast(int x) {
     struct node* newnode = (struct node*)malloc(sizeof(struct node));
-    struct node* save = first;
-
+    
     if(first==NULL) {
         first=newnode;
     }
     else {
+        struct node* save = first;
         while(save->link!=NULL) {
             save=save->link;
         }

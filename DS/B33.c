@@ -16,7 +16,7 @@ int main() {
     printf("Enter words:\n");
     for (int i = 0; i < n; i++) {
         fgets(words[i], sizeof(words[i]), stdin);
-        words[i][strcspn(words[i], "\n")] = '\0';  // remove newline
+        words[i][strcspn(words[i], "\n")] = '\0';
     }
 
     srand(time(0));
