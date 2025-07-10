@@ -42,17 +42,12 @@ int findGCD(int a, int b) {
 
 void GCDList(struct node** head) {
     struct node* save = *head;
-    while(save!=NULL) {
-        struct node* temp = save->link;
-        while(temp!=NULL) {
-            if(save->info>temp->info) {
-                save->info+=temp->info;
-                temp->info = save->info-temp->info;
-                save->info-=temp->info; 
-            }
-            temp=temp->link;
-        }
-        save=save->link;
+    while(save!=NULL && save->link!=NULL) {
+        int gcd=findGCD(save->info, (save->link)->info);
+        struct node* newNode=createNode(gcd);
+        newNode->link=save->link;
+        save->link=newNode;
+        save=newNode->link;
     }
 }
 
@@ -62,6 +57,7 @@ void printList(struct node** list) {
         printf("%d ", save->info);
         save=save->link;
     }
+    printf("\n");
 }
 
 int main() {
@@ -81,11 +77,10 @@ int main() {
     }
     printf("\nOriginal List: ");
     printList(&list);
-    int k = findGCD(18, 6);
-    printf("\nGCD of 18 and 6 is: %d\n", k);
 
     printf("\nGCD List: \n");
     GCDList(&list);
     printList(&list);
 
+    return 0;
 }
