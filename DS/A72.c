@@ -16,7 +16,7 @@ struct node* createNode(int data) {
     return newNode;
 }
 
-void insertNode(struct node** head, int data) {
+void insertFirst(struct node** head, int data) {
     struct node* newNode=createNode(data);
 
     if(*head==NULL) {
@@ -29,10 +29,61 @@ void insertNode(struct node** head, int data) {
     *head=newNode;
 }
 
+void insertEnd(struct node** head, int data) {
+    struct node* newNode=createNode(data);
+
+    if(*head==NULL) {
+        *head=newNode;
+        return;
+    }
+
+    struct node* save=*head;
+    while(save->rptr!=NULL) {
+        save=save->rptr;
+    }
+    save->rptr=newNode;
+    newNode->lptr=save;
+}
+
+void deleteSpecific(struct node** head, int pos) {
+    if (*head == NULL) {
+        printf("List is Empty!!!\n");
+        return;
+    }
+
+    struct node* save = *head;
+
+    if (pos == 1) {
+        *head = save->rptr;
+        if (*head != NULL) {
+            (*head)->lptr = NULL;
+        }
+        free(save);
+        return;
+    }
+
+    for (int i = 1; save != NULL && i < pos; i++) {
+        save = save->rptr;
+    }
+
+    if (save == NULL) {
+        printf("Position out of bounds!!!\n");
+        return;
+    }
+
+    if (save->lptr != NULL)
+        save->lptr->rptr = save->rptr;
+    if (save->rptr != NULL)
+        save->rptr->lptr = save->lptr;
+
+    free(save);
+}
+
+
 void display(struct node** head) {
     struct node *save = *head;
     while(save!=NULL) {
-        printf("%d", save->info);
+        printf("%d ", save->info);
         save=save->rptr;
     }
     printf("\n");
@@ -40,7 +91,7 @@ void display(struct node** head) {
 }
 
 int main() {
-    struct node* list=NULL;
+    struct node *list = NULL;
 
     while (1)
     {
@@ -53,10 +104,53 @@ int main() {
         }
         else
         {
-            insertNode(&list, n);
+            insertEnd(&list, n);
         }
     }
     display(&list);
+
+    int c, t;
+    while (1)
+    {
+        printf("Enter a choice : \n");
+        printf("1. Insert a node at the front of the linked list.\n");
+        printf("2. Delete a node from specified position.\n");
+        printf("3. Insert a node at the end of the linked list.\n");
+        printf("4. Display all nodes.\n");
+        printf(" -1 for Exit .\n");
+        scanf("%d", &c);
+
+        switch (c)
+        {
+        case 1:
+            printf("Enter the values : ");
+            scanf("%d", &t);
+            insertFirst(&list, t);
+            break;
+        case 2:
+            int pos;
+            printf("Enter the position of node : ");
+            scanf("%d", &pos);
+            deleteSpecific(&list, pos);
+            break;
+        case 3:
+            printf("Enter the values : ");
+            scanf("%d", &t);
+            insertEnd(&list, t);
+            break;
+        case 4:
+            display(&list);
+            break;
+        default:
+            break;
+        }
+        if (c == -1)
+        {
+            break;
+        }
+
+        display(&list);
+    }
 
     return 0;
 }
