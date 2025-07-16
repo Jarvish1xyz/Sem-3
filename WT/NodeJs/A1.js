@@ -3,5 +3,5 @@ console.log(path.dirname('/DS/A70.c'));
 console.log(path.basename('/DS/A70.c'));
 console.log(path.join('/DS','/A70.c'));
 console.log(path.extname('/DS/A70.c'));
-console.log(path.relative('/WT/NodeJs','/WT/abc'));
-console.log(path.resolve('/WT/abc','A1.js'));
+console.log(path.relative('/DS/','/WT/abc'));
+console.log(path.resolve('/DS/abc','NodeJs/A1.js'));
