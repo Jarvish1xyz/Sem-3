@@ -30,6 +30,20 @@ void insertNode(struct node** head, int data) {
     }
 }
 
+void reverseList(struct node** head) {
+    struct node* save = *head;
+    struct node* prev = NULL;
+    struct node* next = NULL;
+
+    while (save != NULL) {
+        next = save->link;
+        save->link = prev;
+        prev = save;
+        save = next;
+    }
+    *head = prev;
+}
+
 void printList(struct node** list) {
     struct node* save = *list;
     while(save!=NULL) {
