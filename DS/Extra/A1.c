@@ -56,24 +56,14 @@ struct node* reverseK(struct node** head, int k) {
         struct node* temp=save;
         for(int i=0; i<k; i++) {
             if(temp==NULL) {
-                return;
+                return NULL;
             }
             insertFirst(&tempNext, &temp);
             temp=temp->link;
             save=save->link;
         }
 
-
-        l++;
-        save=save->link;
-
-        if(l==1) {
-            *head=tempNext;
-        }
-        while(tempNext!=NULL) {
-            tempNext=tempNext->link;
-        }
-        tempNext->link=save;
+        insertEnd(&ans, tempNext->info);
     }
 }
 
