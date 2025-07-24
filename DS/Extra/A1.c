@@ -13,8 +13,9 @@ struct node* createNode(int data) {
     return newNode;
 }
 
-void insertFirst(struct node** head, struct node* temp) {
-    struct node* newNode = temp;
+void insertFirst(struct node** head, struct node** temp) {
+    struct node* newNode = *temp;
+    if()
     newNode->link=*head;
     *head = newNode;
 }
@@ -33,18 +34,18 @@ void insertEnd(struct node** head, int data) {
     save->link=newNode;
 }
 
-void reverseK(struct node** head, int k) {
+struct node* reverseK(struct node** head, int k) {
 
     if(*head==NULL) {
         printf("List is empty\n");
-        return;
+        return NULL;
     }
     
     struct node* save=*head;
     int l=0;
     
+    struct node* tempNext=NULL;
     while(save!=NULL) {
-        struct node* tempNext=NULL;
         
         
         int count=0;
@@ -53,13 +54,14 @@ void reverseK(struct node** head, int k) {
             if(temp==NULL) {
                 return;
             }
+            insertFirst(&tempNext, &temp);
             temp=temp->link;
         }
 
 
         l++;
-            insertFirst(&tempNext, save);
-            save=save->link;
+        save=save->link;
+
         if(l==1) {
             *head=tempNext;
         }
