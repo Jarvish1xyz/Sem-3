@@ -64,8 +64,6 @@ struct node* deleteNode(struct node** root, int data) {
     return *root;
 }
 
-
-
 int searchNode(struct node** root, int data) {
     if ((*root)->info == data) {
         return 1;
