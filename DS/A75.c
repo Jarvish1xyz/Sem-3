@@ -67,10 +67,10 @@ struct node* deleteNode(struct node** root, int data) {
 
 
 int searchNode(struct node** root, int data) {
-    if (*root == NULL || (*root)->info == data) {
+    if ((*root)->info == data) {
         return 1;
     }
-    if (data < (*root)->info) {
+    else if (data < (*root)->info) {
         return searchNode(&((*root)->lptr), data);
     }
     else if (data > (*root)->info) {

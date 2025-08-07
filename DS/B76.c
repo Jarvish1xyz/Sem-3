@@ -40,8 +40,14 @@ struct node* insertNode(struct node** root, int data) {
     return *root;
 }
 
-int preorder(struct node** root,int l) {
+void preorder(struct node** root,int l) {
     if (*root == NULL) {
+        if(l) {
+            push1(-1);
+        }
+        else {
+            push2(-1);
+        }
         return;
     }
     if(l) {
@@ -55,7 +61,15 @@ int preorder(struct node** root,int l) {
 }
 
 int checkStakes() {
-    while(top!=-1 || top2!=-1)
+    while(top1!=-1 || top2!=-1) {
+        if(Stack1[top1--]!=Stack2[top2--]) {
+            return 0;
+        }
+    }
+    if(top1) return 0;
+    if(top2) return 0;
+
+    return 1;
 }
 
 
@@ -96,9 +110,6 @@ int main() {
     else {
         printf("Both Tree are not same.");
     }
-
-
-
-
+    
     return 0;
 }
