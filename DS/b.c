@@ -37,6 +37,6 @@ int main() {
             }
         }
         ans[i] = min;
-        temp[k] = max + 1; // Mark as used by setting to a value
+        temp[k] = max + 1;
     }
 }
