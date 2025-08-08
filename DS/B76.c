@@ -66,8 +66,6 @@ int checkStakes() {
             return 0;
         }
     }
-    if(top1) return 0;
-    if(top2) return 0;
 
     return 1;
 }
@@ -78,37 +76,24 @@ int main() {
     struct node* bst1 = NULL;
     struct node* bst2 = NULL;
 
-    int n;
-    printf("\nInserrt First tree : \n");
-    while(1) {
-        printf("Enter data : ");
-        scanf("%d", &n);
-        if (n == -1) {
-            break;
-        }
-        else {
-            insertNode(&bst1, n);
-        }
-    }
+    insertNode(&bst1, 3);
+    insertNode(&(bst1->lptr), 2);
+    insertNode(&(bst1->rptr), 4);
+    insertNode(&((bst1->lptr)->rptr), 1);
+    
+    insertNode(&bst2, 3);
+    insertNode(&(bst2->lptr), 2);
+    insertNode(&(bst2->rptr), 4);
+    insertNode(&((bst2->lptr)->lptr), 1);
+
     preorder(&bst1, 1);
-    printf("\nInserrt Second tree : \n");
-    while(1) {
-        printf("Enter data : ");
-        scanf("%d", &n);
-        if (n == -1) {
-            break;
-        }
-        else {
-            insertNode(&bst2, n);
-        }
-    }
     preorder(&bst2, 0);
 
     if(checkStakes()) {
-        printf("Both Tree are same.");
+        printf("Both Tree are same.\n");
     }
     else {
-        printf("Both Tree are not same.");
+        printf("Both Tree are not same.\n");
     }
     
     return 0;
