@@ -4,6 +4,7 @@ function Home() {
     return (
         <>
         <Navbar/>
+        <br/><br/><br/>
             <div className="card" style={{width: '18rem'}}>
                 <img src="https://images.pexels.com/photos/17888840/pexels-photo-17888840.jpeg" className="card-img-top" alt="..."/>
                     <div className="card-body">

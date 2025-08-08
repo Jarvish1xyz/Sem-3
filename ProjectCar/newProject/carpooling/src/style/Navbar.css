@@ -1,0 +1,31 @@
+.navbar {
+    color: white;
+}
+
+.links {
+    font-size: larger;
+    display: flex;
+}
+
+.links a {
+    position: relative;
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
+    padding-bottom: 4px;
+}
+
+.links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2.5px;
+    background: linear-gradient(45deg, white, gray, black);
+    transition: width 0.3s ease-in-out;
+}
+
+.links a:hover::after {
+    width: 100%;
+}
