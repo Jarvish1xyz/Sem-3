@@ -84,7 +84,7 @@ int main() {
     insertNode(&bst2, 3);
     insertNode(&(bst2->lptr), 2);
     insertNode(&(bst2->rptr), 4);
-    insertNode(&((bst2->lptr)->lptr), 1);
+    insertNode(&((bst2->lptr)->rptr), 1);
 
     preorder(&bst1, 1);
     preorder(&bst2, 0);
