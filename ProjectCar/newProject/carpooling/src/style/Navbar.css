@@ -1,3 +1,10 @@
+.navbar {
+    width: 100vw;
+    position: fixed;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.253);
+}
+
 .links {
     font-size: larger;
     display: flex;
@@ -12,14 +19,6 @@
     transition: transform 0.5s;
     margin: 0vh 1.5vh;
 }
-/* 
-.nav-link{
-    transition: all 0.5s;
-}
-
-.nav-link:hover {
-    transform: scale(1.1);
-} */
 
 .links a::after {
     content: '';
@@ -29,15 +28,36 @@
     width: 0%;
     height: 1.8px;
     background: linear-gradient(45deg, white 40%, gray, black);
-    transition: width 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
-.links a:hover {
+.links span {
+    transition: all 0.3s ease-in-out;
+}
+
+.links span:hover {
     transform: scale(1.1);
+    padding: 0.3vh;
+    animation-name: box;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
 }
 
 .links a:hover::after {
     width: 100%;
+}
+
+@keyframes box {
+    from {
+        border: 1px solid transparent;
+        background-color: transparent;
+        border-radius: 10px;
+    }
+    to {
+        border: 1px solid red;
+        border-radius: 10px;
+        background-color: rgba(49, 46, 46, 0.404);
+    }
 }
 
 svg {

@@ -1,0 +1,50 @@
+.body {
+    background-color: white;
+    height: 100vh;
+}
+
+.left {
+    background-color: red;
+    height: 70vh;
+    float: left;
+    width: 45vw;
+}
+
+.form-control, .form-select {
+    border-radius: 20px;
+    transition: all 0.4s;
+}
+
+.form-control:focus, .form-select:focus{
+    border-radius: 0px;
+}
+
+.box {
+    padding: 5vh;
+    background-color: aliceblue;
+    border: 0px solid black;
+    border-radius: 20px;
+    transition: all 0.3s;
+    /* height: 50vh; */
+    width: 80vh;
+}
+
+.box:hover {
+    transform: scale(1.009);
+    box-shadow: 1vh 0vh 15vh 0.5vh;
+}
+
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 50vw;
+    float: right;
+}
+
+.btn {
+    width: 50%
+    /* margin-left:50%;
+    margin-right:50%; */
+}

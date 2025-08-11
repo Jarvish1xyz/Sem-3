@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <style>
+        .navbar {
+            width: 100vw;
+            position: fixed;
+            z-index: 1000;
+            background-color: rgba(0, 0, 0, 0.253);
+        }
+
+        .links {
+            font-size: larger;
+            display: flex;
+        }
+
+        .nav-link {
+            position: relative;
+            padding: 6px 12px;
+            text-decoration: none;
+            color: inherit;
+            margin: 0vh 2vh;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::before,
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, white 40%, gray, black);
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::before {
+            left: 0;
+            top: 0;
+        }
+
+        .nav-link::after {
+            right: 0;
+            bottom: 0;
+        }
+
+        .nav-link span::before,
+        .nav-link span::after {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 0;
+            background: linear-gradient(45deg, white 40%, gray, black);
+            transition: all 0.3s ease;
+        }
+
+        .nav-link span::before {
+            left: 0;
+            top: 0;
+        }
+
+        .nav-link span::after {
+            right: 0;
+            bottom: 0;
+        }
+
+        .nav-link:hover::before,
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover span::before,
+        .nav-link:hover span::after {
+            height: 100%;
+        }
+
+
+        @keyframes box {
+            from {
+                border: 1px solid transparent;
+                background-color: transparent;
+                border-radius: 10px;
+            }
+
+            to {
+                border: 1px solid gray;
+                border-radius: 10px;
+                background-color: rgba(49, 46, 46, 0.404);
+            }
+        }
+
+        .logo {
+            margin-right: 1.2vh;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: rotate(10deg) scale(1.05);
+        }
+
+        .fimage {
+            background-image: url(https://cdn.blablacar.com/k/a/images/carpool_only_large-138d9f97c3f7113d.svg);
+            background-size: cover;
+            background-position: center;
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            /* height: 50vh; */
+        }
+
+        .fline {
+            height: 50vh;
+            font-size: 59px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.292);
+        }
+
+        .ftext {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .fother {
+            height: 150vh;
+            background: blue;
+        }
+
+        .bodypart {
+            background-color: white;
+            height: 60vh;
+        }
+
+        .left {
+            /* background-color: red; */
+            height: 60vh;
+            float: left;
+            width: 45vw;
+        }
+
+        .form-control,
+        .form-select {
+            border-radius: 20px;
+            transition: all 0.4s;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-radius: 0px;
+        }
+
+        .box {
+            padding: 5vh;
+            background-color: aliceblue;
+            border: 0px solid black;
+            border-radius: 20px;
+            transition: all 0.3s;
+            /* height: 50vh; */
+            width: 80vh;
+        }
+
+        .box:hover {
+            transform: scale(1.009);
+            box-shadow: 1vh 0vh 15vh 0.5vh;
+        }
+
+        .right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60vh;
+            width: 50vw;
+            float: left;
+        }
+
+        .btn {
+            width: 50%
+        }
+
+        .bodypart2 {
+            background-color: white;
+            height: 60vh;
+        }
+
+        .left2 {
+            /* background-color: red; */
+            height: 60vh;
+            float: left;
+            width: 45vw;
+        }
+
+        .right2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60vh;
+            width: 50vw;
+            float: right;
+        }
+
+        .bodypart3 {
+            background-color: white;
+            height: 60vh;
+        }
+
+        .left3 {
+            /* background-color: red; */
+            height: 60vh;
+            float: left;
+            width: 45vw;
+        }
+
+        .right3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60vh;
+            width: 50vw;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-opacity-10" style="color:white">
+        <div class="container-fluid">
+            <a class="navbar-brand nav-links active d-flex align-items-center text-dark" href="Navbar.js">
+                <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 26" id="deviantart-logo" width="30"
+                    height="30">
+                    <path d="M16 0h-5L8 5H0v7h4l.444 1L0 21v5h5l3-5h8v-7h-4l-.444-1L16 5z"></path>
+                </svg>
+                Rapid Ride
+            </a>
+            <div class="d-flex links" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="#"><span>Home</span></a>
+                    <a class="nav-link active" href="#"><span>Features</span></a>
+                    <a class="nav-link active" href="#"><span>Pricing</span></a>
+                    <a class="nav-link active" href='#'><span>Disabled</span></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class='fimage'>
+        <div class='fline d-flex justify-content-center align-items-center'>
+            <span class='ftext'>Book your ride on your comfort</span>
+        </div>
+    </div>
+
+    <div class="bodypart">
+        <div class="bc">
+            <div class="right">
+                <div class="box">
+                    <form>
+                        <div class='row'>
+                            <div class='col'>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" placeholder='From...' />
+                                </div>
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <div class='col'>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" placeholder='To...' />
+                                </div>
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <div class='col'>
+                                <div class="mb-3">
+                                    <input type="date" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" placeholder='Date...' />
+                                </div>
+                            </div>
+                            <div class='col'>
+                                <div class="mb-3">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected disabled>No. of Passengers</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <div class='col d-flex justify-content-center align-items-center'>
+                                <button type="submit" class="btn btn-outline-primary">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="left">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="bodypart2">
+        <div class="bc">
+            <div class="left2">
+                <img src="https://cdn.blablacar.com/k/a/images/scamDetective-80f3a8463074443b.svg" alt="">
+            </div>
+            <div class="right2">
+                <div class="box">
+
+                    <div class="row">
+                        <div class="col h2">
+                            Help us keep you safe from scams
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            At BlaBlaCar, we're working hard to make our platform as secure as it can be. But when scams
+                            do happen, we want you to know exactly how to avoid and report them. Follow our tips to help
+                            us keep you safe.
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-outline-primary">Learn more</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bodypart3">
+            <div class="bc">
+                <div class="right">
+                    <div class="box">
+
+                        <div class="row">
+                            <div class="col h2">
+                                Where do you want to drive to?
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                Let's make this your least expensive journey ever.
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <button type="submit" class="btn btn-outline-primary">Learn more</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="left">
+                    <img src="https://cdn.blablacar.com/k/a/images/driver-8b8061fb1af127e7.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+
+
+
+</body>
+
+</html>

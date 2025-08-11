@@ -1,5 +1,38 @@
-.img-fluid {
-    width: 50rem;
-    margin: 5vh;
-    /* height: 100px; */
+.fimage {
+    background-image: url(https://cdn.blablacar.com/k/a/images/carpool_only_large-138d9f97c3f7113d.svg);
+    background-size: cover;
+    background-position: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* height: 50vh; */
+}
+
+.fline {
+    height: 50vh;
+    font-size: 59px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.292);
+}
+
+.ftext {
+    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.fother {
+    height: 150vh;
+    background: blue;
 }
