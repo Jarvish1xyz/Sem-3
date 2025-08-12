@@ -130,6 +130,9 @@
             height: 60vh;
             float: left;
             width: 45vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .form-control,
@@ -212,6 +215,10 @@
             width: 50vw;
             float: right;
         }
+
+        .limg {
+            width: 50vh;
+        }
     </style>
 </head>
 
@@ -219,7 +226,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-opacity-10" style="color:white">
         <div class="container-fluid">
             <a class="navbar-brand nav-links active d-flex align-items-center text-dark" href="Navbar.js">
-                <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 26" id="deviantart-logo" width="30" height="30">
+                <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 26" id="deviantart-logo" width="30"
+                    height="30">
                     <path d="M16 0h-5L8 5H0v7h4l.444 1L0 21v5h5l3-5h8v-7h-4l-.444-1L16 5z"></path>
                 </svg>
                 Rapid Ride
@@ -227,9 +235,9 @@
             <div class="d-flex links" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="#"><span>Home</span></a>
-                    <a class="nav-link active" href="#"><span>Features</span></a>
-                    <a class="nav-link active" href="#"><span>Pricing</span></a>
-                    <a class="nav-link active" href='#'><span>Disabled</span></a>
+                    <a class="nav-link active" href="./rids.html"><span>Rides</span></a>
+                    <a class="nav-link active" href="#"><span>Map</span></a>
+                    <a class="nav-link active" href='./profile.html'><span>Profile</span></a>
                 </div>
             </div>
         </div>
@@ -290,7 +298,7 @@
                 </div>
             </div>
             <div class="left">
-
+                <img class="limg" src="https://storyset.com/illustration/order-ride/bro" alt="">
             </div>
         </div>
     </div>
