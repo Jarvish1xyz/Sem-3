@@ -86,7 +86,7 @@ import './App.css';
 //   --------------- : Lab-2 : ---------------
 
 
-function DemoMap() {
+// function DemoMap() {
 
   // const fruits = ['Apple','Banana', 'Mango', 'Orang']
 
@@ -106,118 +106,134 @@ function DemoMap() {
 
 
 
-  const student = [
-    {
-      name: 'kartik',
-      age: 18,
-      rollNO: 201
-    },
-    {
-      name: 'kartik',
-      age: 18,
-      rollNO: 201
-    },
-    {
-      name: 'kartik',
-      age: 18,
-      rollNO: 201
-    }
-  ];
-  const faculty = [
-    {
-      name: 'kartik',
-      age: 18,
-      rollNO: 201
-    },
-    {
-      name: 'kartik',
-      age: 18,
-      rollNO: 201
-    },
-    {
-      name: 'kartik',
-      age: 18,
-      rollNO: 201
-    }
-  ];
-  const product = [
-    {
-      name: 'kartik',
-      age: 18,
-      rollNO: 201
-    },
-    {
-      name: 'kartik',
-      age: 18,
-      rollNO: 201
-    },
-    {
-      name: 'kartik',
-      age: 18,
-      rollNO: 201
-    }
-  ];
+//   const student = [
+//     {
+//       name: 'kartik',
+//       age: 18,
+//       rollNO: 201
+//     },
+//     {
+//       name: 'kartik',
+//       age: 18,
+//       rollNO: 201
+//     },
+//     {
+//       name: 'kartik',
+//       age: 18,
+//       rollNO: 201
+//     }
+//   ];
+//   const faculty = [
+//     {
+//       name: 'kartik',
+//       age: 18,
+//       rollNO: 201
+//     },
+//     {
+//       name: 'kartik',
+//       age: 18,
+//       rollNO: 201
+//     },
+//     {
+//       name: 'kartik',
+//       age: 18,
+//       rollNO: 201
+//     }
+//   ];
+//   const product = [
+//     {
+//       name: 'kartik',
+//       age: 18,
+//       rollNO: 201
+//     },
+//     {
+//       name: 'kartik',
+//       age: 18,
+//       rollNO: 201
+//     },
+//     {
+//       name: 'kartik',
+//       age: 18,
+//       rollNO: 201
+//     }
+//   ];
 
 
-  return (
-    <>
-      <div className='row'>
-          <h2>Student List !!!</h2>
-        <div className='col d-flex'>
-          {student.map((value, key) => (
-            <div class="card m-3" style={{width: '18rem'}}>
-                <div class="card-body">
-                  <h5 class="card-title">Name : {value.name}</h5>
-                  <p class="card-text">Age : {value.age}</p>
-                  <p class="card-text">Rollno. : {value.rollNO}</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className='row'>
-          <h2>Faculty List !!!</h2>
-        <div className='col d-flex'>
-          {faculty.map((value, key) => (
-            <div class="card m-3" style={{width: '18rem'}}>
-                <div class="card-body">
-                  <h5 class="card-title">Name : {value.name}</h5>
-                  <p class="card-text">Age : {value.age}</p>
-                  <p class="card-text">Rollno. : {value.rollNO}</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className='row'>
-          <h2>Product List !!!</h2>
-        <div className='col d-flex'>
-          {product.map((value, key) => (
-            <div class="card m-3" style={{width: '18rem'}}>
-                <div class="card-body">
-                  <h5 class="card-title">Name : {value.name}</h5>
-                  <p class="card-text">Age : {value.age}</p>
-                  <p class="card-text">Rollno. : {value.rollNO}</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-          ))}
-        </div>
-      </div>
+//   return (
+//     <>
+//       <div className='row'>
+//           <h2>Student List !!!</h2>
+//         <div className='col d-flex'>
+//           {student.map((value, key) => (
+//             <div class="card m-3" style={{width: '18rem'}}>
+//                 <div class="card-body">
+//                   <h5 class="card-title">Name : {value.name}</h5>
+//                   <p class="card-text">Age : {value.age}</p>
+//                   <p class="card-text">Rollno. : {value.rollNO}</p>
+//                   <a href="#" class="btn btn-primary">Go somewhere</a>
+//                 </div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//       <div className='row'>
+//           <h2>Faculty List !!!</h2>
+//         <div className='col d-flex'>
+//           {faculty.map((value, key) => (
+//             <div class="card m-3" style={{width: '18rem'}}>
+//                 <div class="card-body">
+//                   <h5 class="card-title">Name : {value.name}</h5>
+//                   <p class="card-text">Age : {value.age}</p>
+//                   <p class="card-text">Rollno. : {value.rollNO}</p>
+//                   <a href="#" class="btn btn-primary">Go somewhere</a>
+//                 </div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//       <div className='row'>
+//           <h2>Product List !!!</h2>
+//         <div className='col d-flex'>
+//           {product.map((value, key) => (
+//             <div class="card m-3" style={{width: '18rem'}}>
+//                 <div class="card-body">
+//                   <h5 class="card-title">Name : {value.name}</h5>
+//                   <p class="card-text">Age : {value.age}</p>
+//                   <p class="card-text">Rollno. : {value.rollNO}</p>
+//                   <a href="#" class="btn btn-primary">Go somewhere</a>
+//                 </div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
 
-    </>
-  );
-}
+//     </>
+//   );
+// }
 
+
+
+// function App() {
+
+//   return (
+//     <>
+//       <DemoMap />
+//     </>
+//   );
+// }
+
+
+
+
+//   --------------------------------------------- : Lab-4 : ---------------------------------------------
+
+import A from './components/Lab-4/A'
 
 
 function App() {
-
-  return (
+  return(
     <>
-      <DemoMap />
+      <A/>
     </>
   );
 }
