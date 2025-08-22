@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhagavad Gita</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <style>
+
+        .body {
+            padding: 0vh 3vh;
+        }
+
+        .navbox {
+            width: 100vw;
+            height: auto;
+            /* background-color: aqua; */
+            position: fixed;
+            z-index: 1000;
+        }
+
+        nav {
+            background: linear-gradient(to right, #ececc5, #F5DEB3);
+            /* position: sticky; */
+        }
+
+        .boxbar {
+            /* background-color: #ececc5; */
+            /* margin: 3vh; */
+            z-index: 1;
+            padding-top: 20vh;
+        }
+
+        .bodypart {
+            z-index: 2;
+        }
+
+        .bodypart2 {
+            z-index: 3;
+        }
+
+        .box1 {
+            position: sticky;
+            top: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbox p-3">
+        <nav class="navbar rounded-2 navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html">
+                    <h2>Bhagavad Gita</h2>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+
+    <div class="body abc ">
+        <div class="box1 boxbar homeImg">
+            <img class="rounded-4" src="https://bhagavadgita.io/_next/image?url=%2Fbanner2.png&w=1920&q=75" width="100%"
+                alt="">
+        </div>
+
+        <div class="box1 bodypart">
+            <div class="bc">
+                <div class="right">
+                    <div class="box">
+                        <form>
+                            <div class='row'>
+                                <div class='col'>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" id="exampleInputEmail1"
+                                            aria-describedby="emailHelp" placeholder='From...' />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class='col'>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" id="exampleInputEmail1"
+                                            aria-describedby="emailHelp" placeholder='To...' />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class='col'>
+                                    <div class="mb-3">
+                                        <input type="date" class="form-control" id="exampleInputEmail1"
+                                            aria-describedby="emailHelp" placeholder='Date...' />
+                                    </div>
+                                </div>
+                                <div class='col'>
+                                    <div class="mb-3">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected disabled>No. of Passengers</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class='col d-flex justify-content-center align-items-center'>
+                                    <a class="btn btn-outline-primary" href="./rids.html">Submit</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="left">
+                    <img class="limg" src="./Order ride-bro.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="box1 bodypart2">
+            <div class="bc">
+                <div class="left2">
+                    <img src="https://cdn.blablacar.com/k/a/images/scamDetective-80f3a8463074443b.svg" alt="">
+                </div>
+                <div class="right2">
+                    <div class="box">
+
+                        <div class="row">
+                            <div class="col h2">
+                                Help us keep you safe from scams
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                At BlaBlaCar, we're working hard to make our platform as secure as it can be. But when
+                                scams
+                                do happen, we want you to know exactly how to avoid and report them. Follow our tips to
+                                help
+                                us keep you safe.
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <button type="submit" class="btn btn-outline-primary">Learn more</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
