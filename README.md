@@ -22,3 +22,85 @@
 [![](https://visitcount.itsvg.in/api?id=Jarvish1xyz&icon=0&color=0)](https://visitcount.itsvg.in)
 
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
+#include <stdio.h>
+#include <stdlib.h>
+#define N 7
+
+struct node{
+    int info;
+    struct node* lptr;
+    struct node* rptr;
+};
+
+struct node* createNode(int data) {
+    struct node* newNode = (struct node*)malloc(sizeof(struct node));
+    newNode->info = data;
+    newNode->lptr = NULL;
+    newNode->rptr = NULL;
+    return newNode;
+}
+
+
+struct node* insertNode(struct node** root, int data) {
+    if (*root == NULL) {
+        *root = createNode(data);
+        return *root;
+    }
+    return *root;
+}
+
+
+int findIndex(int* arr, int value, int start, int end) {
+    for (int i = start; i <= end; i++) {
+        if (arr[i] == value) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+
+
+
+void makeBTree(struct node** root, int* pre, int* post,int s, int n) {
+    if(*root==NULL) {
+        insertNode(root, pre[0]);
+    }
+    int index = findIndex(post, (pre+1)[0], 0, n);
+    if(index==-1) {
+        return;
+    }
+    
+    makeBTree(&((*root)->lptr), ++pre, post, s, index);
+    makeBTree(&((*root)->rptr), ++pre, post, s, n - 1);
+}
+
+
+void inorder(struct node* root) {
+    if (root == NULL) {
+        return;
+    }
+    inorder(root->lptr);
+    printf("%d ", root->info);
+    inorder(root->rptr);
+
+}
+
+
+
+
+
+int main() {
+
+    struct node* btree = NULL;
+
+    int pre[N]={1,2,4,5,7,6,8}, post[N]={4,5,2,6,8,7,1};
+
+    makeBTree(&btree, pre, post, 0, N-1);
+
+    printf("Inorder traversal of the constructed binary tree: ");
+    inorder(btree);
+    printf("\n");
+
+    return 0;
+}
