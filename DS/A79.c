@@ -45,14 +45,9 @@ void makeBTree(struct node** root, int* pre, int* post,int s, int n) {
         return;
     }
     
-    makeBTree(&((*root)->lptr), pre + 1, post, s, index);
-    s=n+1;
-    pre=pre+1;
-    makeBTree(&((*root)->rptr), pre+1, post, s, n-1);
-
+    makeBTree(&((*root)->lptr), pre++, post, s, index);
+    makeBTree(&((*root)->rptr), pre + 1, post, s, n - 1);
 }
-
-
 
 
 void inorder(struct node* root) {
