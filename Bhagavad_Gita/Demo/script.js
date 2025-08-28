@@ -184,11 +184,11 @@
 
 const url = 'https://bhagavad-gita3.p.rapidapi.com/v2/chapters/?skip=0&limit=18';
 const options = {
-    method: 'GET',
-    headers: {
-        'x-rapidapi-key': 'bcba844d26msh2d333e852898b44p124f13jsn0e520c9be445',
-        'x-rapidapi-host': 'bhagavad-gita3.p.rapidapi.com'
-    }
+	method: 'GET',
+	headers: {
+		'x-rapidapi-key': 'bcba844d26msh2d333e852898b44p124f13jsn0e520c9be445',
+		'x-rapidapi-host': 'bhagavad-gita3.p.rapidapi.com'
+	}
 };
 
 try {
@@ -199,17 +199,16 @@ try {
         displaychpters(Gita);
     });
 } catch (error) {
-    console.error(error);
+	console.error(error);
 }
 
 function displaychpters(Gita) {
     Gita.forEach((chapter) => {
-        // create new column for each chapter
         let col = document.createElement('div');
         col.className = "col";
 
         col.innerHTML = `
-            <a href="./Chapter/${chapter.id}.html">
+            <a href="./Chapter/${chapter.id}.html" class="chapter-link">
                 <div class="card abc" style="width: 100%; height:100%;">
                     <div class="card-body">
                         <h6 class="card-title card-ch">Chapter ${chapter.id}</h6>
@@ -236,6 +235,13 @@ function displaychpters(Gita) {
 
         // append col to row
         document.getElementById("cards").appendChild(col);
+
+        // ✅ attach Milan call to the anchor
+        let link = col.querySelector(".chapter-link");
+        link.addEventListener("click", (e) => {
+            e.preventDefault(); // stop default navigation
+            Milan(chapter.id);
+        });
     });
 }
 

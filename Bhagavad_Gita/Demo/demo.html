@@ -10,7 +10,7 @@
     <!-- <link rel="stylesheet" href="./style.css"> -->
     <style>
         .navbox {
-            width: 100vw;
+            width: 100%;
             height: auto;
             /* background-color: aqua; */
             position: fixed;
@@ -36,41 +36,14 @@
 
         }
 
-        .boxbar img {
-            width: 150%;
-            border-radius: 1rem;
-        }
-
-        .thumbnail {
-            padding: 0.25rem;
-            background-color: #fff;
-            border: 1px solid #dee2e6;
-            border-radius: 0.375rem;
-            max-width: 100%;
-            height: auto;
-        }
-
-
-        .text {
-            width: fit-content;
-            position: absolute;
-            /* top: 50%; */
-            /* left: 40%; */
-            z-index: 2;
-            /* font-size: xx-large; */
-            text-align: center;
-        }
-
-        .text h1,
-        .text h2 {
-            font-size: xx-larger;
-            text-shadow: 2px 2px 4px #000000;
-        }
 
         .bodypart {
-            background-color: whitesmoke;
+            background-color:whitesmoke;
             z-index: 2;
             /* padding: 0vh 3vh; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         a {
@@ -88,19 +61,6 @@
             box-shadow: 0 14px 18px rgba(26, 25, 25, 0.2);
         }
 
-        .card-text {
-            display: -webkit-box;
-            -webkit-line-clamp: 4;
-            /* show only 3 lines */
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .bodypart2 {
-            z-index: 3;
-        }
-
         .box1 {
             position: sticky;
             top: 0px;
@@ -110,12 +70,33 @@
             color: #ffa600;
         }
 
-        svg {
-            height: 1.5rem;
+        .CS {
+            font-size: 2.8vh;
+            line-height: 1.8;
         }
 
-        .card-link {
-            color: black;
+        .pqr {
+            transition: all 0.3s;
+        }
+
+        .pqr:hover {
+            background-color: #f8f9fa;
+            box-shadow: 0 0 20px 1px rgba(26, 25, 25, 0.2);
+            border-radius: 0.5rem;
+        }
+
+        .mainCh {
+            padding: 0vh 15vh;
+            text-align: center;
+        }
+
+        .box {
+            width: 80%;
+            font-size: larger;
+        }
+
+        .slok {
+            padding: 0vh 47vh;
         }
 
         @media screen and (max-width: 991px) {
@@ -131,22 +112,27 @@
                 padding: 13vh 0vh 2vh 0vh;
             }
 
-            .boxbar img {
+            .box {
                 width: 100%;
-                height: 50vh;
-                /* or any height */
-                object-fit: cover;
-                /* crop instead of squishing */
-                object-position: center;
-                /* keep center part */
-                border: 0px;
-                border-radius: 0px;
             }
 
-            .thumbnail {
-                padding: 0rem;
+            .pqr {
+                padding: 0vh;
+                margin: 0vh;
             }
 
+            .slok {
+                padding: 0vh;
+                font-size: medium;
+            }
+
+            .mainCh {
+                padding: 0vh 2vh;
+            }
+
+            .CS {
+                line-height: normal;
+            }
         }
     </style>
 </head>
@@ -155,7 +141,7 @@
     <div class="navbox p-3">
         <nav class="navbar rounded-2 navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="./index.html">
+                <a class="navbar-brand" href="../../Bhagavad_Gita/abc.html">
                     <h2>Bhagavad Gita</h2>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -200,13 +186,17 @@
 
 
     <div class="body">
-        <div class="box1 bodypart" id="mcard">
+        <div class="box1 boxbar text-center" id="mcards">
 
         </div>
 
-        <div class="box1" id="cards">
+        <div class="box1 bodypart">
+            <div class="box">
+                <div id="vcards" class="row ch row-cols-1 g-2 g-lg-3">
 
-
+                </div>
+            </div>
+            
         </div>
     </div>
 
@@ -218,7 +208,7 @@
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
 
-    
+    <script type="module" src="./demo.js"></script>
 </body>
 
 </html>
