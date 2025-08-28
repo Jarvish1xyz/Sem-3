@@ -72,6 +72,7 @@
 
         .CS {
             font-size: 2.8vh;
+            line-height: 1.8;
         }
 
         .pqr {
@@ -85,7 +86,7 @@
         }
 
         .mainCh {
-            padding: 5vh 15vh;
+            padding: 0vh 15vh;
             text-align: center;
         }
 
@@ -124,12 +125,14 @@
                 padding: 0vh;
                 font-size: medium;
             }
-            .CS {
-                font-size: 1vh;
-            }
 
             .mainCh {
-                padding: 0vh;
+                padding: 0vh 2vh;
+            }
+
+            .CS {
+                font-size: 2.3vh;
+                line-height: normal;
             }
         }
     </style>
@@ -235,7 +238,7 @@
             main.innerHTML = `
                 <h5 class="card-title card-ch">Chapter ${Gita.chapter_number}</h5>
                 <h2 class="card-subtitle mb-2 fw-bolder">${Gita.name_translated}</h2>
-                <p class="card-text CS lh-lg text-start">${Gita.chapter_summary}</p>
+                <p class="card-text CS text-start">${Gita.chapter_summary}</p>
             `;
 
             document.getElementById("mcards").appendChild(main);
