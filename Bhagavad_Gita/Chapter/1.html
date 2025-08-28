@@ -38,7 +38,7 @@
 
 
         .bodypart {
-            background-color: white;
+            background-color:whitesmoke;
             z-index: 2;
             /* padding: 0vh 3vh; */
             display: flex;
@@ -70,6 +70,10 @@
             color: #ffa600;
         }
 
+        .CS {
+            font-size: 2.8vh;
+        }
+
         .pqr {
             transition: all 0.3s;
         }
@@ -80,12 +84,19 @@
             border-radius: 0.5rem;
         }
 
+        .mainCh {
+            padding: 5vh 15vh;
+            text-align: center;
+        }
+
         .box {
             width: 80%;
             font-size: larger;
         }
 
-        /* .main */
+        .slok {
+            padding: 0vh 47vh;
+        }
 
         @media screen and (max-width: 991px) {
             .text {
@@ -100,6 +111,19 @@
                 padding: 13vh 0vh 2vh 0vh;
             }
 
+            .box {
+                width: 100%;
+            }
+
+            .pqr {
+                padding: 0vh;
+                margin: 0vh;
+            }
+
+            .slok {
+                padding: 0vh;
+                font-size: medium;
+            }
         }
     </style>
 </head>
@@ -108,7 +132,7 @@
     <div class="navbox p-3">
         <nav class="navbar rounded-2 navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="./index.html">
+                <a class="navbar-brand" href="../../Bhagavad_Gita/abc.html">
                     <h2>Bhagavad Gita</h2>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -158,12 +182,12 @@
         </div>
 
         <div class="box1 bodypart">
-            <div class="box p-3 m-5">
+            <div class="box">
                 <div id="vcards" class="row ch row-cols-1 g-2 g-lg-3">
 
                 </div>
             </div>
-
+            
         </div>
     </div>
 
@@ -202,9 +226,9 @@
             let main = document.createElement("div");
             main.className = "mainCh";
             main.innerHTML = `
-                <h5 class="card-title">Chapter ${Gita.chapter_number}</h5>
-                <h2 class="card-subtitle mb-2 card-ch">${Gita.name_translated}</h2>
-                <p class="card-text">${Gita.chapter_summary}</p>
+                <h5 class="card-title card-ch">Chapter ${Gita.chapter_number}</h5>
+                <h2 class="card-subtitle mb-2 fw-bolder">${Gita.name_translated}</h2>
+                <p class="card-text CS lh-lg text-start">${Gita.chapter_summary}</p>
             `;
 
             document.getElementById("mcards").appendChild(main);
@@ -212,8 +236,7 @@
         }
 
 
-        var url = 'https://bhagavad-gita3.p.rapidapi.com/v2/chapters/1/';
-        url += 'verses/';
+        var url = 'https://bhagavad-gita3.p.rapidapi.com/v2/chapters/1/verses/';
         const options = {
             method: 'GET',
             headers: {
@@ -241,7 +264,7 @@
 
             Gita.forEach((verse) => {
                 let col = document.createElement('div');
-                col.className = "col row row-cols-1 m-3 pqr p-3";
+                col.className = "col row row-cols-1 g-2 m-3 pqr p-3";
 
                 let description = "";
                 for (let tr of verse.translations) {
@@ -251,19 +274,20 @@
                 }
 
                 let collapse = `collapseExample${verse.verse_number}`;
+                let colPartId = `col-${verse.verse_number}`;
 
                 col.innerHTML = `
-                    <a class="d-flex w-100" data-bs-toggle="collapse" href="#${collapse}" role="button" aria-expanded="false" aria-controls="${collapse}">
-                        <div class="col-2">
+                    <a class="d-flex flex-wrap w-100" onclick="abc(${verse.verse_number})" data-bs-toggle="collapse" href="#${collapse}" role="button" aria-expanded="false" aria-controls="${collapse}">
+                        <div class="col-12 col-lg-2">
                             <span class="card-title card-ch">Verse ${verse.verse_number}</span>
                         </div>
-                        <div class="col-10">
+                        <div class="col-12 col-lg-10">
                             ${description}
                         </div>
                     </a>
                     <div class="collapse" id="${collapse}" data-bs-parent="#accordionGita">
-                        <div class="card card-body" style="width: 100%;">
-                            Loading...
+                        <div class="card card-body" id="${colPartId}" style="width: 100%;">
+                            
                         </div>
                     </div>
                 `;
@@ -276,9 +300,8 @@
 
 
         function abc(vid) {
-            var urlv = 'https://bhagavad-gita3.p.rapidapi.com/v2/chapters/1/verses/';
-            urlv += vid + '/';
-            const options = {
+            var urlv = `https://bhagavad-gita3.p.rapidapi.com/v2/chapters/1/verses/${vid}/`;
+            const options2 = {
                 method: 'GET',
                 headers: {
                     'x-rapidapi-key': 'bcba844d26msh2d333e852898b44p124f13jsn0e520c9be445',
@@ -287,7 +310,7 @@
             };
 
             try {
-                let v = fetch(urlv, options);
+                let v = fetch(urlv, options2);
                 v.then((response) => {
                     return response.json();
                 }).then((Verse) => {
@@ -300,15 +323,22 @@
 
 
 
+
         function displaycollapse(Verse) {
+            let colPartId = `col-${Verse.verse_number}`;
             let coll = document.createElement('div');
-            coll.className = "coll";
+            coll.className = "coll text-center";
             coll.innerHTML = `
                 <div>
                     <h2 class="card-title">BG ${Verse.chapter_number}.${Verse.verse_number}</h2>
+                    <h4 class="card-subtitle mb-2 slok card-ch lh-base">${Verse.text}</h4>
                 </div>
             `;
+
+            document.getElementById(colPartId).innerHTML="";
+            document.getElementById(colPartId).appendChild(coll);
         }
+
     </script>
 </body>
 
