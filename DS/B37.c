@@ -23,7 +23,7 @@ char pop() {
     }
 }
 
-int findMatching(char c) {
+char findMatching(char c) {
     if (c == ')') return '(';
     if (c == '}') return '{';
     if (c == ']') return '[';
