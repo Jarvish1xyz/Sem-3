@@ -28,19 +28,12 @@ int main() {
     printf("Enter a string: ");
     scanf("%s", str);
 
-    if(str[0] != 'a') {
-        printf("The string is invalid\n");
-        return 0;
-    }
     for(int i=0; str[i]!='\0'; i++) {
         if(str[i]=='a') {
             push(str[i]);
         } 
         else if(str[i]=='b') {
-            if(pop()!='a') {
-                printf("The string is invalid\n");
-                return 0;
-            }
+            pop();
         }
         else {
             printf("The string is invalid\n");
