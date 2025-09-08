@@ -24,7 +24,7 @@ INSERT INTO STUDENT_MASTER_L15 VALUES (106, 'MAHESH', NULL, 4.50, 3);
 
 SELECT * FROM STUDENT_MASTER_L15;
 
---Part – A: 
+--------------------Part – A:--------------------
 
 --4. Try to update SPI of Raju from 8.80 to 12. 
 UPDATE STUDENT_MASTER_L15
@@ -37,8 +37,7 @@ SET BKLOG=-1
 WHERE NAME='NEHA'
 
 
---Part – B: Create table as per following schema with proper validation and try to insert data which violate your 
---validation. 
+--------------------Part – B:--------------------  
 
 --1. Emp_details(Eid, Ename, Did, Cid, Salary, Experience) 
 CREATE TABLE EMP_DETAILS(
@@ -84,8 +83,7 @@ INSERT INTO CITY_DETAILS VALUES (104,NULL);
 INSERT INTO DEPT_DETAILS VALUES (4,NULL);
 
 
---Part – C: Create table as per following schema with proper validation and try to insert data which violate your 
---validation. 
+--------------------Part – C:-------------------- 
 
 --1. Emp_info(Eid, Ename, Did, Cid, Salary, Experience) 
 CREATE TABLE EMP_INFO(
@@ -155,3 +153,4 @@ JOIN CITY_INFO city ON e.CID = city.CID
 JOIN DISTRICT d ON city.DID = d.DID
 JOIN STATE s ON s.SID = d.SID
 JOIN COUNTRY c ON s.CID = c.CID;
+
