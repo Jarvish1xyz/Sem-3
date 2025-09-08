@@ -4,7 +4,7 @@ CREATE TABLE STUDENT_MASTER_L15 (
     RNO INT PRIMARY KEY,
     NAME VARCHAR(50),
 
-    --3. Enter the default value as ‘General’ in branch to all new records IF no other value is specified. 
+    --3. Enter the default value as â€˜Generalâ€™ in branch to all new records IF no other value is specified. 
     BRANCH VARCHAR(10) DEFAULT 'GENERAL',
 
     --1. Do not allow SPI more than 10 
@@ -24,7 +24,7 @@ INSERT INTO STUDENT_MASTER_L15 VALUES (106, 'MAHESH', NULL, 4.50, 3);
 
 SELECT * FROM STUDENT_MASTER_L15;
 
---Part – A: 
+--Part â€“ A: 
 
 --4. Try to update SPI of Raju from 8.80 to 12. 
 UPDATE STUDENT_MASTER_L15
@@ -37,7 +37,7 @@ SET BKLOG=-1
 WHERE NAME='NEHA'
 
 
---Part – B: Create table as per following schema with proper validation and try to insert data which violate your 
+--Part â€“ B: Create table as per following schema with proper validation and try to insert data which violate your 
 --validation. 
 
 --1. Emp_details(Eid, Ename, Did, Cid, Salary, Experience) 
@@ -84,7 +84,7 @@ INSERT INTO CITY_DETAILS VALUES (104,NULL);
 INSERT INTO DEPT_DETAILS VALUES (4,NULL);
 
 
---Part – C: Create table as per following schema with proper validation and try to insert data which violate your 
+--Part â€“ C: Create table as per following schema with proper validation and try to insert data which violate your 
 --validation. 
 
 --1. Emp_info(Eid, Ename, Did, Cid, Salary, Experience) 
@@ -136,7 +136,7 @@ INSERT INTO CITY_INFO VALUES (201, 'MUMBAI', 21),(202, 'AHMEDABAD', 22),(203, 'L
 
 INSERT INTO DEPT_INFO VALUES (101, 'HR'),(102, 'IT'),(103, 'FINANCE'),(104, 'MARKETING'),(105, 'OPERATIONS');
 
-INSERT INTO EMP_INFO VALUES (301, 'AMIT', 101, 201, 50000, 5),(302, 'RINA', 102, 202, 60000, 4),(303, 'JOHN', 103, 203, 75000, 6),(304, 'SOFIA', 104, 204, 80000, 7),(305, 'RAJ', 105, 205, 55000, 3);
+INSERT INTO EMP_INFO VALUES (301, 'AMIT', 101, 201, 50000, 5),(302, 'RINA', 102, 202, 60000, 4),(303, 'JOHN', 103, 203, 75000, 6),(304, 'SOFIA', 104, 204, 80000, 7),(305, 'RAJ', 105,Â 205,Â 55000,Â 3);
 
 --3. Display employeename, departmentname, Salary, Experience, City, District, State and country of all 
 --employees.
