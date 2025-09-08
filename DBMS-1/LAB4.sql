@@ -4,15 +4,11 @@ USE CSE_3A_201;
 ----------------------------------------Select into Operation----------------------------------------
 
 
---------------------Part ï¿½ A:--------------------
+--------------------Part – A:--------------------
 
 
 CREATE TABLE CRICKET (
-	
-	NAME VARCHAR(20),
-	CITY VARCHAR(10),
-	AGE INT
-
+		NAME VARCHAR(20),	CITY VARCHAR(10),	AGE INT
 );
 
 INSERT INTO CRICKET VALUES
@@ -26,7 +22,6 @@ INSERT INTO CRICKET VALUES
 --1. Create table Worldcup from cricket with all the columns and data.
 SELECT * INTO WORLDCUP 
 FROM CRICKET;
-
 --2. Create table T20 from cricket with first two columns with no data.
 SELECT NAME, CITY 
 INTO T20
@@ -53,22 +48,8 @@ SELECT * INTO PLAYER_DATA
 FROM CRICKET
 WHERE AGE%5=0;
 
---7. Insert the cricketer into IPL table whose city is ï¿½Jharkhandï¿½
-INSERT INTO IPL
-SELECT *
-FROM CRICKET
-WHERE CITY='JHARKHAND';
-
-
---------------------Part ï¿½ B:--------------------
-
-
-CREATE TABLE EMPLOYEE (
-	
-	NAME VARCHAR(20),
-	CITY VARCHAR(10),
-	AGE INT
-
+--7. Insert the cricketer into IPL table whose city is ‘Jharkhand’INSERT INTO IPLSELECT *FROM CRICKETWHERE CITY='JHARKHAND';--------------------Part – B:--------------------CREATE TABLE EMPLOYEE (
+		NAME VARCHAR(20),	CITY VARCHAR(10),	AGE INT
 );
 
 INSERT INTO EMPLOYEE VALUES
@@ -96,7 +77,7 @@ FROM EMPLOYEE
 WHERE 1=0;
 
 
---------------------Part ï¿½ C:--------------------
+--------------------Part – C:--------------------
 
 
 --1. Insert the Data into Employee_info from Employee whose CITY is Rajkot
@@ -118,7 +99,7 @@ WHERE AGE>32;
 ----------------------------------------Update Operation----------------------------------------
 
 
---------------------Part ï¿½ A:--------------------
+--------------------Part – A:--------------------
 
 
 --1. Update deposit amount of all customers from 3000 to 5000. (Use Deposit Table)
@@ -133,7 +114,7 @@ WHERE CNAME='ANIL';
 
 --3. Update Account No of SANDIP to 111 & Amount to 5000. (Use Deposit Table)
 UPDATE DEPOSIT
-SET ACTNO=5000
+SET ACTNO=111, AMOUNT=5000
 WHERE CNAME='SANDIP';
 
 --4. Update amount of KRANTI to 7000. (Use Deposit Table)
@@ -172,7 +153,7 @@ SET AMOUNT=5000, ADATE='1996-04-1'
 WHERE CNAME='PRAMOD';
 
 
---------------------Part ï¿½ B:--------------------
+--------------------Part – B:--------------------
 
 
 --1. Give 10% Increment in Loan Amount. (Use Borrow Table)
@@ -187,18 +168,18 @@ SET AMOUNT+=(AMOUNT*02);
 UPDATE DEPOSIT
 SET AMOUNT+=1000;
 
---4. Update the BORROW table to set the amount to 7000 and the branch name to 'CENTRAL' where the customer name is ï¿½MEHULï¿½ and the loan number is even.
+--4. Update the BORROW table to set the amount to 7000 and the branch name to 'CENTRAL' where the customer name is ‘MEHUL’ and the loan number is even.
 UPDATE BORROW
 SET AMOUNT=7000, BNAME='CENTRAL'
 WHERE CNAME='MEHUL' AND LOANNO%2=0;
 
---5. Update the DEPOSIT table to set the date to '2022-05-15' and the amount to 2500 for all accounts in ï¿½VRCEï¿½ and with an account number less than 105.
+--5. Update the DEPOSIT table to set the date to '2022-05-15' and the amount to 2500 for all accounts in ‘VRCE’ and with an account number less than 105.
 UPDATE DEPOSIT
 SET ADATE='2022-05-15', AMOUNT=2500
 WHERE BNAME='VRCE' AND ACTNO<105;
 
 
---------------------Part ï¿½ C:--------------------
+--------------------Part – C:--------------------
 
 
 --1. Update amount of loan no 321 to NULL. (Use Borrow Table)
@@ -230,7 +211,7 @@ UPDATE DEPOSIT
 SET ADATE='2021-01-01'
 WHERE AMOUNT<2000;
 
---7. Update the Deposit table and set the date to NULL & Branch name to ï¿½ANDHERI whose Account No is 110.
+--7. Update the Deposit table and set the date to NULL & Branch name to ‘ANDHERI whose Account No is 110.
 UPDATE DEPOSIT
 SET ADATE=NULL, BNAME='ANDHERI'
 WHERE ACTNO=110;

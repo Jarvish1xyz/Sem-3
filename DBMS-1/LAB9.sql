@@ -14,10 +14,10 @@ SELECT 5*30;
 SELECT ABS(-25),ABS(25),ABS(50),ABS(50);
 
 --3. Find smallest integer value that is greater than or equal to 25.2, 25.7 and -25.2.
-SELECT CEILING(25.2),CEILING(25.7),CEILING(-25.2);
+SELECT FLOOR(25.2),FLOOR(25.7),FLOOR(-25.2);
 
 --4. Find largest integer value that is smaller than or equal to 25.2, 25.7 and -25.2.
-SELECT FLOOR(25.2),FLOOR(25.7),FLOOR(-25.2);
+SELECT CEILING(25.2),CEILING(25.7),CEILING(-25.2);
 
 --5. Find out remainder of 5 divided 2 and 5 divided by 3.
 SELECT 5%2, 5%3;
@@ -83,10 +83,10 @@ SELECT (Salary+Commission)
 FROM EMP_MASTER;
 
 --2. Find smallest integer value that is greater than or equal to 55.2, 35.7 and -55.2.
-SELECT CEILING(55.2),CEILING(35.7),CEILING(-55.2);
+SELECT FLOOR(55.2),FLOOR(35.7),FLOOR(-55.2);
 
 --3. Find largest integer value that is smaller than or equal to 55.2, 35.7 and -55.2.
-SELECT FLOOR(55.2),FLOOR(35.7),FLOOR(-55.2);
+SELECT CEILING(55.2),CEILING(35.7),CEILING(-55.2);
 
 --4. Find out remainder of 55 divided 2 and 55 divided by 3.
 SELECT 55%2, 55%3;
@@ -118,144 +118,3 @@ FROM EMP_MASTER
 WHERE (Salary+Commission)>=Salary*2;
 
 
-
-
-
-----------------------------------------String functions----------------------------------------
-
-
---------------------Part – A:--------------------
-
-
---1. Find the length of following. (I) NULL (II) ‘ hello ’ (III) Blank
-SELECT LEN(NULL), LEN(' HELLO '), LEN('');
-
---2. Display your name in lower & upper case.
-SELECT LOWER('SINHA MILAN'), UPPER('SINHA MILAN');
-
---3. Display first three characters of your name.
-SELECT SUBSTRING('SINHA MILAN',0,4);
-
---4. Display 3rd to 10th character of your name.
-SELECT SUBSTRING('SINHA MILAN',3,11);
-
---5. Write a query to convert ‘abc123efg’ to ‘abcXYZefg’ & ‘abcabcabc’ to ‘ab5ab5ab5’ using REPLACE.
-SELECT REPLACE('abc123efg', '123', 'XYZ'), REPLACE('abcabcabc', 'C', '5');
-
---6. Write a query to display ASCII code for ‘a’,’A’,’z’,’Z’, 0, 9.
-SELECT ASCII('a'), ASCII('A'), ASCII('z'), ASCII('Z'), ASCII(0), ASCII(9);
-
---7. Write a query to display character based on number 97, 65,122,90,48,57.
-SELECT CHAR(97),CHAR(65),CHAR(122),CHAR(90),CHAR(48),CHAR(57);
-
---8. Write a query to remove spaces from left of a given string ‘hello world ‘.
-SELECT LTRIM('hello world ');
-
---9. Write a query to remove spaces from right of a given string ‘ hello world ‘.
-SELECT RTRIM(' hello world');
-
---10. Write a query to display first 4 & Last 5 characters of ‘SQL Server’.
-SELECT SUBSTRING('SQL Server',0,5), SUBSTRING('SQL Server',LEN('SQL Server')-4,LEN('SQL Server'));
-
---11. Write a query to convert a string ‘1234.56’ to number (Use cast and convert function).
-SELECT CAST('1234.56' AS decimal(6,2)), CONVERT(decimal(6,2), '1234.56');
-
---12. Write a query to convert a float 10.58 to integer (Use cast and convert function).
-SELECT CAST('10.58' AS int), CONVERT(int, '10.58');
-
---13. Put 10 space before your name using function.
-SELECT SPACE(10)+'SINHA MILAN';
-
---14. Combine two strings using + sign as well as CONCAT ().
-SELECT 'ABC'+'abc', CONCAT('ABC', 'abc');
-
---15. Find reverse of “Darshan”.
-SELECT REVERSE('Darshan');
-
---16. Repeat your name 3 times.
-SELECT REPLICATE('SINHA MILAN', 3);
-
-
---------------------Part – C:--------------------
-
-
---1. Find the length of EMP Name and City columns.
-SELECT LEN(EmpName), LEN(City)
-FROM EMP_MASTER;
-
---2. Display EMP Name and City columns in lower & upper case.
-SELECT LOWER(EmpName), LOWER(City), UPPER(EmpName), UPPER(City)
-FROM EMP_MASTER;
-
---3. Display first three characters of EMP Name column.
-SELECT SUBSTRING(EmpName, 0,4)
-FROM EMP_MASTER;
-
---4. Display 3rd to 10th character of city column.
-SELECT SUBSTRING(City,3,11)
-FROM EMP_MASTER;
-
---5. Write a query to display first 4 & Last 5 characters of EMP Name column.
-SELECT SUBSTRING(EmpName,0,5), SUBSTRING(EmpName,LEN(EmpName)-4,LEN(EmpName))
-FROM EMP_MASTER;
-
-
---------------------Part – C:--------------------
-
-
---1. Put 10 space before EMP Name using function.
-SELECT SPACE(10)+EmpName
-FROM EMP_MASTER;
-
---2. Combine EMP Name and city columns using + sign as well as CONCAT ().
-SELECT EmpName+City, CONCAT(EmpName, City)
-FROM EMP_MASTER;
-
---3. Combine all columns using + sign as well as CONCAT ().
-SELECT EmpNo+EmpName+JoiningDate+Salary+Commission+City+DeptCode, CONCAT(EmpNo,EmpName,JoiningDate,Salary,Commission,City,DeptCode)
-FROM EMP_MASTER;
-
---4. Combine the result as < EMP Name > Lives in <City>.
-SELECT EmpName+' Lives ib '+City
-FROM EMP_MASTER;
-
---5. Combine the result as ‘EMP no of < EMP Name> is <EmpNo> .
-SELECT CONCAT('EMP no of ', EmpName,' is ', EmpNo)
-FROM EMP_MASTER;
-
---6. Retrieve the names of all employee where the third character of the Name is a vowel.
-SELECT EmpName
-FROM EMP_MASTER
-GROUP BY EmpName
-HAVING SUBSTRING(EmpName,3,1) IN ('A','E','I','O','U');
-
---7. Concatenate the name and city of students who have a name that ends with the letter 'r' and a city starts with 'R'.
-SELECT CONCAT(EmpName,City)
-FROM EMP_MASTER
-WHERE EmpName LIKE '%r' AND City LIKE 'R%'
-
-
-
-
-
-----------------------------------------Date Functions----------------------------------------
-
-
---------------------Part – A:--------------------
-
---1. Write a query to display the current date & time. Label the column Today_Date.
-SELECT GETDATE() AS Today_Date;
-
---2. Write a query to find new date after 365 day with reference to today.
-
---3. Display the current date in a format that appears as may 5 1994 12:00AM.
---4. Display the current date in a format that appears as 03 Jan 1995.
---5. Display the current date in a format that appears as Jan 04, 96.
---6. Write a query to find out total number of months between 31-Dec-08 and 31-Mar-09.
---7. Write a query to find out total number of hours between 25-Jan-12 7:00 and 26-Jan-12 10:30.
---8. Write a query to extract Day, Month, Year from given date 12-May-16.
---9. Write a query that adds 5 years to current date.
---10. Write a query to subtract 2 months from current date.
---11. Extract month from current date using datename () and datepart () function.
---12. Write a query to find out last date of current month.
---13. Calculate your age in years and months.

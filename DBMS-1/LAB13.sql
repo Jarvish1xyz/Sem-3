@@ -148,4 +148,4 @@ ORDER BY MAX(Price) DESC;
 
 
 --2. Insert 5 records in each table.
---3. Display employeename, departmentname, Salary, Experience, City, District, State and country of all employees.
+--3. Display employeename, departmentname, Salary, Experience, City, District, State and country of all employees.

@@ -4,7 +4,7 @@ USE CSE_3A_201;
 ----------------------------------------Alter, Rename Operation----------------------------------------
 
 
---------------------Part ï¿½ A:--------------------
+--------------------Part – A:--------------------
 
 
 --1. Add two more columns City VARCHAR (20) and Pincode INT.
@@ -34,7 +34,7 @@ EXEC SP_RENAME 'DEPOSIT.ACTNO', 'ANO';
 EXEC SP_RENAME 'DEPOSIT', 'DEPOSIT_DETAIL';
 
 
---------------------Part ï¿½ B:--------------------
+--------------------Part – B:--------------------
 
 
 --1. Rename Column ADATE to AOPENDATE OF DEPOSIT_DETAIL table.
@@ -52,7 +52,7 @@ ALTER TABLE DEPOSIT_DETAIL
 ADD COUNTRY VARCHAR(20);
 
 
---------------------Part ï¿½ C:--------------------
+--------------------Part – C:--------------------
 
 
 CREATE TABLE STUDENT_DETAIL(
@@ -97,7 +97,7 @@ EXEC SP_RENAME 'STUDENT_DETAIL', 'STUDENT_MASTER';
 ----------------------------------------DELETE, Truncate, Drop Operation----------------------------------------
 
 
---------------------Part ï¿½ A:--------------------
+--------------------Part – A:--------------------
 
 
 --1. Delete all the records of DEPOSIT_DETAIL table having amount less than and equals to 4000.
@@ -112,7 +112,7 @@ WHERE BNAME='CHANDI';
 DELETE FROM DEPOSIT_DETAIL
 WHERE ANO>102 AND ANO<105;
 
---4. Delete all the accounts whose branch is ï¿½AJNIï¿½ or ï¿½POWAIï¿½
+--4. Delete all the accounts whose branch is ‘AJNI’ or ‘POWAI’
 DELETE FROM DEPOSIT_DETAIL
 WHERE BNAME='AJNI' OR BNAME='POWAI';
 
@@ -130,7 +130,7 @@ TRUNCATE TABLE DEPOSIT_DETAIL;
 DROP TABLE DEPOSIT_DETAIL;
 
 
---------------------Part ï¿½ B:--------------------
+--------------------Part – B:--------------------
 
 
 CREATE TABLE EMPLOYEE_MASTER (
@@ -149,14 +149,11 @@ INSERT INTO EMPLOYEE_MASTER VALUES
 (105, 'HARMIT', '2004-02-15', 14000.00, 'RAJKOT'),
 (106, 'MITESH', '2001-09-25', 5000.00, 'JAMNAGAR'),
 (107, 'MEERAeera', Null, 7000.00, 'MORBI'),
-(108, 'KISHAN', '2003-02-6', 10000.00, NULL);
-
-
---1. Delete all the records of Employee_MASTER table having salary greater than and equals to 14000.
+(108, 'KISHAN', '2003-02-6', 10000.00, NULL);--1. Delete all the records of Employee_MASTER table having salary greater than and equals to 14000.
 DELETE FROM EMPLOYEE_MASTER
 WHERE SALARY>=14000;
 
---2. Delete all the Employees who belongs to ï¿½RAJKOTï¿½ city.
+--2. Delete all the Employees who belongs to ‘RAJKOT’ city.
 DELETE FROM EMPLOYEE_MASTER
 WHERE CITY='RAJKOT';
 
@@ -183,6 +180,6 @@ TRUNCATE TABLE EMPLOYEE_MASTER;
 DROP TABLE EMPLOYEE_MASTER;
 
 
---------------------Part ï¿½ C:--------------------
+--------------------Part – C:--------------------
 
 
