@@ -1,4 +1,6 @@
 // import logo from './logo.svg';
+// import { useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 // import Navbar from './components/Navbar';
 // import Footer from './components/Footer';
@@ -15,7 +17,7 @@ import './App.css';
 // }
 
 
-//   --------------- : Lab-1 : ---------------
+//   --------------------------------------------- : Lab-1 : ---------------------------------------------
 
 
 
@@ -83,25 +85,25 @@ import './App.css';
 
 
 
-//   --------------- : Lab-2 : ---------------
+//   --------------------------------------------- : Lab-2 : ---------------------------------------------
 
 
 // function DemoMap() {
 
-  // const fruits = ['Apple','Banana', 'Mango', 'Orang']
+// const fruits = ['Apple','Banana', 'Mango', 'Orang']
 
-  // return(
-  //   <>
-  //       <div>
-  //         <h2> Fruits List !!! </h2>
-  //         <ul>
-  //           {fruits.map((fruit, index) => (
-  //             <li key={index}>{fruit}</li>
-  //           ))}
-  //         </ul>
-  //       </div>
-  //   </>
-  // );
+// return(
+//   <>
+//       <div>
+//         <h2> Fruits List !!! </h2>
+//         <ul>
+//           {fruits.map((fruit, index) => (
+//             <li key={index}>{fruit}</li>
+//           ))}
+//         </ul>
+//       </div>
+//   </>
+// );
 
 
 
@@ -225,18 +227,116 @@ import './App.css';
 
 
 
-//   --------------------------------------------- : Lab-4 : ---------------------------------------------
+//   ------------------------------------------------------------------- : Lab-4 : -------------------------------------------------------------------
 
-import A from './components/Lab-4/A'
+// import A from './components/Lab-4/A'
 
+
+// function App() {
+//   return(
+//     <>
+//       <A/>
+//     </>
+//   );
+// }
+
+
+// export default App;
+
+
+
+
+// ------------------------------------------------------------------- : Lab-5 : -------------------------------------------------------------------
+
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import Home from './components/Lab-5/Home';
+// import Image from './components/Lab-5/Image';
+// import Find from './components/Lab-5/Find';
+
+// function App() {
+//   return (
+//     <BrowserRouter>
+//       <Routes>
+//         <Route path='/' element={<Home/>}>
+//           <Route path='/find' element={<Find/>}/>
+//           <Route path='/image' element={<Image/>}/>
+//         </Route>
+//       </Routes>
+//     </BrowserRouter>
+
+//   );
+// }
+
+// export default App;
+
+
+
+
+
+
+
+// ------------------------------------------------------------------- : Lab-6 : -------------------------------------------------------------------
+
+// import Counter from './components/Lab-6/Counter';
+
+// function App() {
+  
+//   return (
+//     <>
+//         <Counter/>
+//     </>
+//   );
+// }
+
+// export default App;
+  
+  
+  
+  
+// ------------------------------------------------------------------- : Lab-7 : -------------------------------------------------------------------
+// import Login from './components/Lab-7/Login';
+// import Deshbord from './components/Lab-7/Deshbord';
+
+
+// function App() {
+//   const [user, setUser] = useState(null);
+
+//   const login = (username, password) => {
+//     if(username === 'admin' && password === 'admin'){
+//       setUser(username);
+//       return true;
+//     }
+//     return false;
+//   }
+
+//   const logout = () => {
+//     setUser(null);
+//   }
+
+//   return (
+//     <>
+//       {user ?
+//         <Deshbord user={user} logout={logout}/> :
+//         <Login login={login}/>
+//       } 
+//     </>
+//   );
+// }
+
+// export default App;
+
+
+
+//   --------------------------------------------- : Lab-8 : ---------------------------------------------
+
+import Cal from './components/Lab-8/Cal';
 
 function App() {
-  return(
+  return (
     <>
-      <A/>
+      <Cal/>
     </>
   );
 }
-
 
 export default App;
