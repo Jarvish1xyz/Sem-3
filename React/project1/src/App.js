@@ -2,6 +2,7 @@
 // import { useState } from 'react';
 import { useState } from 'react';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // import Navbar from './components/Navbar';
 // import Footer from './components/Footer';
 // import Contant from './components/Contant';
@@ -329,12 +330,38 @@ import './App.css';
 
 //   --------------------------------------------- : Lab-8 : ---------------------------------------------
 
-import Cal from './components/Lab-8/Cal';
+// import Cal from './components/Lab-8/Cal';
+
+// function App() {
+  //   return (
+    //     <>
+    //       <Cal/>
+    //     </>
+    //   );
+    // }
+    
+    // export default App;
+
+
+    //   --------------------------------------------- : Lab-9 : ---------------------------------------------
+
+import Layout from './components/Lab-9/Layout';
+import Home from './components/Lab-9/Home';
+// import Update from './components/Lab-9/Update';
+// import Add from './components/Lab-9/Add';
 
 function App() {
   return (
     <>
-      <Cal/>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Layout/>}>
+            <Route index element={<Home/>}/>
+            {/* <Route path='/update' element={<Update/>}/> */}
+            {/* <Route path='/add' element={<Add/>}/> */}
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
