@@ -347,7 +347,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Layout from './components/Lab-9/Layout';
 import Home from './components/Lab-9/Home';
-// import Update from './components/Lab-9/Update';
+import Stu from './components/Lab-9/Stu';
+import Update from './components/Lab-9/Update';
 // import Add from './components/Lab-9/Add';
 
 function App() {
@@ -357,7 +358,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Layout/>}>
             <Route index element={<Home/>}/>
-            {/* <Route path='/update' element={<Update/>}/> */}
+            <Route path='/student/:id' element={<Stu/>}/>
+            <Route path='/update/:id' element={<Update/>}/>
             {/* <Route path='/add' element={<Add/>}/> */}
           </Route>
         </Routes>
